@@ -19,9 +19,9 @@ function App() {
           <Route path="/browse" Component={BrowsePage}>
             <Route index Component={HomeBrowser} />
             <Route path="home" Component={HomeBrowser} />
-            <Route path="search" Component={TasksPage} />
-            <Route path="filter" Component={InsertPage} />
-            <Route path="book" Component={SingleTask} />
+            <Route path="search" Component={SearchPage} />
+            <Route path="filter" Component={FilterPage} />
+            <Route path="book" Component={SingleBook} />
           </Route>
         </Routes>
         <Footer />
