@@ -22,9 +22,8 @@ export default function Header() {
                         <Sidebar />
                     </button>
                     <Offcanvas show={show} onHide={handleClose} style={{ backgroundColor: "#1f2328", color: "#FFFFFF" }}>
-                        <Offcanvas.Header closeButton>
-                            <Offcanvas.Title>Task Manager</Offcanvas.Title>
-                            <ThemeButton />
+                        <Offcanvas.Header closeButton style={{paddingTop: "5px"}} className="border-bottom" closeVariant="white">
+                            <Offcanvas.Title> Task Manager        <ThemeButton /> </Offcanvas.Title>          
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             Some text as placeholder. In real life you can have the elements you
