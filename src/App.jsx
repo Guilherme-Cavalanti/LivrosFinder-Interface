@@ -15,15 +15,14 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" Component={HomePage} />
-          {/* <Route path="/about" Component={AboutPage} />
+          <Route path="/about" Component={AboutPage} />
           <Route path="/browse" Component={BrowsePage}>
             <Route index Component={HomeBrowser} />
             <Route path="home" Component={HomeBrowser} />
-            <Route path="tasks" Component={TasksPage} />
-            <Route path="insert" Component={InsertPage} />
-            <Route path="deleted" Component={DeletedPage} />
-            <Route path="task" Component={SingleTask} />
-          </Route> */}
+            <Route path="search" Component={TasksPage} />
+            <Route path="filter" Component={InsertPage} />
+            <Route path="book" Component={SingleTask} />
+          </Route>
         </Routes>
         <Footer />
       </Router>
