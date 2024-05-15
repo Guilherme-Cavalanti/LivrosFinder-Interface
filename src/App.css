@@ -1,3 +1,29 @@
 body {
   margin: 0;
 }
+:root {
+  --light-background-2: #F8f9fa;
+  --light-background: #FFFFFF;
+  --dark-background-2: #2b3035;
+  --dark-background: #212529;
+  --light-color: #000000;
+  --dark-color: #FFFFFF;
+}
+
+.light-theme {
+  background-color: var(--light-background) !important;
+  color: var(--light-color);
+}
+
+.dark-theme {
+  background-color:  var(--dark-background) !important;
+  color: var(--dark-color);
+}
+
+.light-theme.front, .light-theme.footer {
+  background-color: var(--light-background-2) !important;
+}
+
+.dark-theme.front, .dark-theme.footer {
+  background-color: var(--dark-background-2) !important;
+}
