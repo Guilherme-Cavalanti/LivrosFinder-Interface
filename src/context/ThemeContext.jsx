@@ -3,15 +3,17 @@ import { createContext, useState, useCallback, useEffect } from "react";
 const ThemeContext = createContext()
 
 const ThemeFunctions = function ({ children }) {
-    const [darkTheme, setDarkTheme] = useState(false)
+    const [darkTheme, setDarkTheme] = useState(() => {
+        return localStorage.getItem("dark") === "true";
+    })
 
     const switchTheme = useCallback(() => {
-        setDarkTheme(prevTheme => !prevTheme);
+        setDarkTheme(prevTheme => {
+            const newTheme = !prevTheme
+            localStorage.setItem("dark", newTheme)
+            return newTheme
+        })
     }, []);
-
-    useEffect(() => {
-        console.log(`Dark Theme: ${darkTheme}`)
-    }, [darkTheme])
 
     return (
         <ThemeContext.Provider value={{ darkTheme, switchTheme }}>

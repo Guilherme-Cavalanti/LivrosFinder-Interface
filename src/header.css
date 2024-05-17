@@ -34,3 +34,25 @@
     padding-left: 0px;
     margin: 0px !important;
 }
+
+a {
+    text-transform: none;
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    width: 100%;
+    padding-left: 0px;
+    margin-bottom: 20px;
+
+}
+
+li:hover {
+    background-color: #dadde1ad;  
+}
+ul.ul-header {
+    padding-top: 0 !important;
+    padding-left: 0 !important;
+    text-align: start;
+    list-style: none;
+}

@@ -5,9 +5,11 @@ import Row from "react-bootstrap/esm/Row"
 import Button from "react-bootstrap/Button"
 import { ThemeContext } from "../../context/ThemeContext"
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function HomePage() {
     const { darkTheme} = useContext(ThemeContext)
+    const nav = useNavigate()
     return (
         <div style={{ width: "100%" }} className="HomePage">
             <Container className={darkTheme ? "front p-0 dark-theme" : "front p-0 light-theme"} style={{ minWidth: "400px" }} fluid>
@@ -25,10 +27,10 @@ export default function HomePage() {
                 </Row>
                 <Row style={{ marginBottom: "10px" }} className="m-0 mb-3">
                     <Col xs={6} sm={6} className="text-end">
-                        <Button>Buscar</Button>
+                        <Button onClick={()=>nav("/browse")}>Buscar</Button>
                     </Col>
                     <Col xs={6} sm={6} className="text-start">
-                        <Button>Sobre</Button>
+                        <Button onClick={()=>nav("/about")}>Sobre</Button>
                     </Col>
                 </Row>
                 <Row className="text-center m-0 mb-3">
@@ -49,7 +51,6 @@ export default function HomePage() {
                             </p>
                         </Container>
                     </Col>
-                    {/* <Col lg={1} className="d-none d-lg-block" /> */}
                     <Col lg={3} md={12} className="text-start">
                         <Container>
                             <h3>Explore nosso repositório!</h3>
@@ -61,7 +62,6 @@ export default function HomePage() {
                             </p>
                         </Container>
                     </Col>
-                    {/* <Col lg={1} className="d-none d-lg-block" /> */}
                     <Col lg={3} md={12} className="text-start">
                         <Container >
                             <h3>Não encontrou o que queria?</h3>

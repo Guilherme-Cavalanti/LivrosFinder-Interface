@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import HomePage from './pages/Home/HomePage';
 import Header from './header';
 import Footer from './Footer';
+import AboutPage from './pages/About/AboutPage';
+import BrowsePage from './pages/Browse/browse';
+import FilterPage from './pages/FilterPage/FilterPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 function App() {
   const { darkTheme} = useContext(ThemeContext)
@@ -15,14 +19,13 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" Component={HomePage} />
-          {/* <Route path="/about" Component={AboutPage} />
+          <Route path="/about" Component={AboutPage} />
           <Route path="/browse" Component={BrowsePage}>
-            <Route index Component={HomeBrowser} />
-            <Route path="home" Component={HomeBrowser} />
+            <Route index Component={SearchPage} />
             <Route path="search" Component={SearchPage} />
             <Route path="filter" Component={FilterPage} />
-            <Route path="book" Component={SingleBook} />
-          </Route> */}
+            {/* <Route path="book" Component={SingleBook} /> */}
+          </Route>
         </Routes>
         <Footer />
       </Router>
