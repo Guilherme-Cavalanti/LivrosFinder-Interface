@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  overflow-x: hidden !important;
 }
 :root {
   --light-background-2: #F8f9fa;
@@ -26,4 +27,8 @@ body {
 
 .dark-theme.front, .dark-theme.footer {
   background-color: var(--dark-background-2) !important;
+}
+
+.textW{
+  color: rgb(156, 156, 156);;
 }

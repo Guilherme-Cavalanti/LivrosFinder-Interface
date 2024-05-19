@@ -1,11 +1,12 @@
 import Container from "react-bootstrap/esm/Container"
 import Col from "react-bootstrap/esm/Col"
 import Row from "react-bootstrap/esm/Row"
+import "./about.css"
 
 export default function AboutPage() {
     return (
-        <div style={{ width: "100%" }}>
-            <Container className="p-5" style={{ minWidth: "400px" }} fluid>
+        <div style={{ width: "100%" }} className="main-about">
+            <Container className="p-5" fluid>
                 <Row style={{ marginTop: "70px" }}>
                     <Col lg={{ span: 5, offset: 1 }} md={12} className="text-start">
                         <h2>Projeto</h2>
@@ -25,7 +26,7 @@ export default function AboutPage() {
                     </Col>
                 </Row>
             </Container>
-            <Container className="p-5" style={{ minWidth: "400px" }} fluid>
+            <Container className="p-5" fluid>
                 <Row>
                     <Col lg={{ span: 5, offset: 1 }} md={12} className="text-start">
                         <h2>Membros</h2>

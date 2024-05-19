@@ -43,9 +43,9 @@ export default function Header() {
                                         Filtros
                                     </ li>
                                 </Link>
-                                <a href="https://www.github.com" target="blank">
+                                <a href="https://github.com/EdgarLiraa/book_api" target="blank">
                                     <li className="rounded">
-                                        Github <BoxArrow size={14}/>
+                                        Github <BoxArrow size={14} />
                                     </li>
                                 </a>
                             </ul>
@@ -70,21 +70,24 @@ export default function Header() {
                 <Col lg={3} className="d-none d-lg-block text-start p-0 mt-3" />
                 <Col lg={2} className="d-none d-lg-block text-end p-0 mt-3">
                     <span className="header-text w-auto">
-                        <Row className="m-0 p-0 mt-2">
-                            <Col lg={8} className="text-end px-2">
-                                <h3>Github</h3>
-                            </Col>
-                            <Col lg={4} className="text-start p-0 mt-1">
-                                <BoxArrow size={20}/>
-                            </Col>
-                        </Row>
+                        <a href="https://github.com/EdgarLiraa/book_api" target="blank">
+                            <Row className="m-0 p-0 mt-2">
+                                <Col lg={8} className="text-end px-2">
+
+                                    <h3>Github</h3>
+
+                                </Col>
+                                <Col lg={4} className="text-start p-0 mt-1">
+                                    <BoxArrow size={20} />
+                                </Col>
+                            </Row>
+                        </a>
                     </span>
                 </Col>
                 <Col lg={1} className="d-none d-lg-block text-start">
                     <ThemeButton />
                 </Col>
             </Row>
-
         </Container>
     )
 }

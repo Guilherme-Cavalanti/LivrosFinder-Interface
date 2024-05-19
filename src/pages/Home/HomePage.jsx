@@ -12,7 +12,7 @@ export default function HomePage() {
     const nav = useNavigate()
     return (
         <div style={{ width: "100%" }} className="HomePage">
-            <Container className={darkTheme ? "front p-0 dark-theme" : "front p-0 light-theme"} style={{ minWidth: "400px" }} fluid>
+            <Container className={darkTheme ? "front p-0 dark-theme" : "front p-0 light-theme"} fluid>
                 <Row style={{ marginBottom: "10px", paddingTop: "75px" }} className="text-center m-0">
                     <Col lg={3} md={2} className="d-none d-md-block" />
                     <Col lg={6} md={8} sm={12} xs={12}>
@@ -37,7 +37,7 @@ export default function HomePage() {
                     <p>Divirta-se!</p>
                 </Row>
             </Container>
-            <Container fluid>
+            <Container fluid >
                 <Row style={{ marginTop: "20px", paddingTop: "2%", paddingBottom: "4%" }} className="justify-content-center">
                     <Col lg={{ span: 3, offset: 0 }} md={12} className="text-start">
                         <Container >
