@@ -13,16 +13,16 @@ export default function BrowsePage() {
                     style={{ height: "100%", marginRight: "0", maxWidth: "300px", marginTop: "70px", zIndex: "0" }} lg={3} xl={3}
                     className="d-none d-lg-block  p-0 position-fixed">
                     <ul>
-                        <Link to='search'>
-                            <li className="rounded">
-                                Pesquisar livros
-                            </ li>
-                        </Link>
-                        <Link to='filter'>
-                            <li className="rounded">
-                                Filtros
-                            </ li>
-                        </Link>
+                        <li className="rounded">
+                            <span className="side-span">
+                                <Link to="search">Pesquisar livros</Link>
+                            </span>
+                        </ li>
+                         <li className="rounded">
+                            <span className="side-span">
+                                <Link to="filter">Filtros</Link>
+                            </span>
+                        </ li>
                     </ul>
                 </Col>
                 <Col md={12} xl={{ span: 7, offset: 2 }} className="p-0" lg={{ span: 9, offset: 3 }} style={{ marginTop: "70px", borderLeft: "1px solid #dee2e6" }}>

@@ -97,7 +97,7 @@ export default function SearchPage() {
     return (
         <Container fluid className="py-5">
             <Form onSubmit={handleSubmit}>
-                <Container fluid className="mb-3">
+                <Container fluid className="mb-3 radio-search">
                     <Form.Check type="radio" label="ISBN" inline name="core_type" id="isbn" onChange={coreChange} checked={coreType === 'isbn'} />
                     <Form.Check type="radio" label="Autor" inline name="core_type" id="author" onChange={coreChange} checked={coreType === 'author'} />
                     <Form.Check type="radio" label="Título" inline name="core_type" id="title" checked={coreType === 'title'} onChange={coreChange} />
