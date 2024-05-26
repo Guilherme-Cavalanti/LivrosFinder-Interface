@@ -24,7 +24,7 @@ export default function SearchPage() {
     const type = validateType(searchParams.get("type")) ? searchParams.get("type") : "title"
     const search = searchParams.get("search") ? searchParams.get("search") : ""
 
-    console.log(type, search)
+    console.log(type, search)   
     const [textInput, setTextInput] = useState(search)
     const [coreType, setCoreType] = useState(type)
     const [books, setBooks] = useState([])

@@ -1,0 +1,14 @@
+.select-filtro{
+    max-height: 200px !important;
+    overflow-y: scroll !important;
+}
+.filter-list{
+    padding: 0px !important;
+}
+.filter-li{
+    padding-top: 10px;
+    margin-bottom: 0px;
+}
+.filter-li:hover{
+    cursor: pointer;
+}

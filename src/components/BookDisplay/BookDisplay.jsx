@@ -4,16 +4,17 @@ import Col from "react-bootstrap/esm/Col";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RedirectButton from "../RedirectButton/RedirectButton";
+import fetch from "../../fetch";
 
 export default function BookDisplay(props) {
+
+    const { FetchImage } = fetch
+
+    const [imageUrls, setImageUrls] = useState({})
     const [books, setBooks] = useState([])
     useEffect(() => {
         setBooks(props.books)
     }, [props.books])
-
-    useEffect(() => {
-        console.log(books)
-    }, [books])
 
     return (
         <Container fluid className="mt-3">
@@ -23,8 +24,8 @@ export default function BookDisplay(props) {
                         <Row className="p-0 m-0">
                             <Col sm={4} xs={4} md={4} lg={3} className="align-items-center">
                                 <img
-                                    src={`https://4064-189-121-203-44.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
-                                    // height="100px"
+                                    src={`https://8327-179-99-70-85.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
+                                    //src={imageUrls[book["Coverurl"]]}
                                     width={"50%"}
                                     style={{ minWidth: "100px" }}
                                     alt={`Cover of ${book["Title"]}`}

@@ -22,7 +22,19 @@ const SearchBook = async(id) => {
     }
 }
 
+const FetchImage = async(url) => {
+    try{
+        const response = await  api.get(`/proxy?url=${url}`, { headers: { "ngrok-skip-browser-warning": "any"}, responseType: "blob" })
+        const {data} = response
+        return data
+    }catch(error){
+        console.log(error)
+        return error
+    }
+}
+
 export  default {
     SearchInput,
-    SearchBook
+    SearchBook,
+    FetchImage
 }

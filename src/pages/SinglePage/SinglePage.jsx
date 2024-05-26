@@ -17,6 +17,8 @@ export default function SinglePage() {
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState("")
     const [book, setBook] = useState({})
+    const [image, setImage] = useState("")
+    const {FetchImage} = fetch
 
     const ValidateId = (id) => (
         (+id >= 1 && +id < 999999999999 && !(isNaN(id)))
@@ -40,6 +42,17 @@ export default function SinglePage() {
             setBook(response["book"])
         }
     }, [response])
+
+    useEffect(()=>{
+        if(book["Year"] !== undefined){
+            const GetImage = async () => {
+                const imgBlob = await FetchImage(book["Coverurl"]);
+                const url = URL.createObjectURL(imgBlob);
+                setImage(url)
+            }   
+            GetImage()
+        }
+    },[book])
 
     if (id === "invalid") return (
         <Container fluid>
@@ -68,7 +81,8 @@ export default function SinglePage() {
                         <Row>
                             <Col md={4} className="text-center mb-4">
                                 <img
-                                    src={`https://4064-189-121-203-44.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
+                                    //src={`https://4064-189-121-203-44.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
+                                    src={image}
                                     width={"100%"}
                                     style={{ minWidth: "100px", maxWidth: "300px" }}
                                     alt={`Cover of ${book["Title"]}`}
@@ -102,8 +116,9 @@ export default function SinglePage() {
                                         <span className="textW">ISBN: </span>{book["Identifier"]}
                                     </Col>
                                 </Row>
-                                <Row>
-                                    <b>Description:</b> <span>{book["descr"] ? book["descr"] : "Nenhuma descrição encontrada"} </span>
+                                    <span className="textW">Tópico: </span>  {book["Topic"]}
+                                <Row className="mt-3">
+                                    <b>Descrição:</b> <span>{book["descr"] ? book["descr"] : "Nenhuma descrição encontrada"} </span>
                                 </Row>
                             </Col>
                         </Row>
