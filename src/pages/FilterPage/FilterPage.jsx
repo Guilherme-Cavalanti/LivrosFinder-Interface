@@ -37,7 +37,6 @@ export default function SearchPage() {
             setBooks({})
             setError("")
         }
-        console.log(filter)
     },[filter])
 
     const loadData = async (page) => {
@@ -45,7 +44,6 @@ export default function SearchPage() {
         const search = `${filter.year} ${filter.language} ${filter.topic} ${filter.subTopic}`
         const response = await SearchInput("filters", search, page)
         setResponse(response)
-        console.log(response)
         setLoading(false)
     }
 

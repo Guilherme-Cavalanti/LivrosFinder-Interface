@@ -24,7 +24,6 @@ export default function SearchPage() {
     const type = validateType(searchParams.get("type")) ? searchParams.get("type") : "title"
     const search = searchParams.get("search") ? searchParams.get("search") : ""
 
-    console.log(type, search)   
     const [textInput, setTextInput] = useState(search)
     const [coreType, setCoreType] = useState(type)
     const [books, setBooks] = useState([])
@@ -49,7 +48,6 @@ export default function SearchPage() {
         setLoading(true)
         const response = await SearchInput(type, search, page)
         setResponse(response)
-        console.log(response)
         setLoading(false)
     }
 
@@ -88,10 +86,8 @@ export default function SearchPage() {
         setActivePage(n)
     }
     useEffect(() => {
-        console.log(searchParams.get("search"), searchParams.get("search"))
         if (searchParams.get("search") != null && searchParams.get("type") != null) {
             loadData(activePage)
-            console.log("a")
         }
     }, [activePage])
     return (

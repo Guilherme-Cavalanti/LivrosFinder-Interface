@@ -6,7 +6,6 @@ const SearchInput = async (coretype, input, page) => {
         const { data } = response
         return data
     }catch(error){
-        console.log(error)
         return {error, message: error.message}
     }
 }
@@ -17,7 +16,6 @@ const SearchBook = async(id) => {
         const {data} = response
         return data
     }catch(error){
-        console.log(error)
         return {error, message: error.message}
     }
 }
@@ -28,7 +26,6 @@ const FetchImage = async(url) => {
         const {data} = response
         return data
     }catch(error){
-        console.log(error)
         return error
     }
 }

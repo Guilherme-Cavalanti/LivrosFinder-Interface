@@ -36,7 +36,6 @@ export default function SinglePage() {
     }, [])
 
     useEffect(() => {
-        console.log(response)
         if (response["error"] !== undefined) setError(response["message"])
         if (response["book"] !== undefined) {
             setBook(response["book"])
