@@ -25,7 +25,7 @@ export default function BrowsePage() {
                         </ li>
                     </ul>
                 </Col>
-                <Col md={12} xl={{ span: 7, offset: 2 }} className="p-0" lg={{ span: 9, offset: 3 }} style={{ marginTop: "70px", borderLeft: "1px solid #dee2e6" }}>
+                <Col md={12} xl={{ span: 7, offset: 3 }} className="p-0" lg={{ span: 9, offset: 3 }} style={{ marginTop: "70px", borderLeft: "1px solid #dee2e6" }}>
                     <Container className="mt-3 p-0" style={{ minWidth: "500px", maxWidth: "900px" }}>
                         <Outlet />
                     </Container>

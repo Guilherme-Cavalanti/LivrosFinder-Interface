@@ -84,11 +84,11 @@ export default function FilterSelect(props) {
         <Container fluid>
             <Form onSubmit={handleSubmit}>
                 <Row>
-                    <Col sm={6} xs={12}>
+                    <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="numberInput">Ano:</Form.Label>
                         <Form.Control type="number" placeholder="Digite aqui" value={textInput} onChange={changeInput} id={"numberInput"} />
                     </Col>
-                    <Col sm={6} xs={12}>
+                    <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="languageSelect">Língua:</Form.Label>
                         <Form.Select aria-label="Default select example" id={"languageSelect"} className="select-filtro" value={language} onChange={changeLanguage}>
                             <option value={""}>Selecione a Língua</option>
@@ -99,7 +99,7 @@ export default function FilterSelect(props) {
                     </Col>
                 </Row>
                 <Row>
-                    <Col sm={6} xs={12}>
+                    <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="topicInput">Tópico:</Form.Label>
                         <Row>
                             <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
@@ -120,7 +120,7 @@ export default function FilterSelect(props) {
                             </Container>
                         </Row>
                     </Col>
-                    <Col sm={6} xs={12}>
+                    <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="subtopicInput">Subtópico:</Form.Label>
                         <Row>
                             <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
