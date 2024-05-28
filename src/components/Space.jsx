@@ -1,6 +1,6 @@
 export default function Space(){
     return(
-        <div style={{padding:"20%"}}>
+        <div style={{padding:"229px"}}>
             &nbsp;
         </div>
     )

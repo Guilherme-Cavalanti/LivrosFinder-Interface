@@ -24,7 +24,7 @@ export default function BookDisplay(props) {
                         <Row className="p-0 m-0">
                             <Col sm={4} xs={4} md={4} lg={3} className="align-items-center">
                                 <img
-                                    src={`https://8327-179-99-70-85.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
+                                    src={`https://5030-179-99-70-85.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
                                     //src={imageUrls[book["Coverurl"]]}
                                     width={"50%"}
                                     style={{ minWidth: "100px" }}

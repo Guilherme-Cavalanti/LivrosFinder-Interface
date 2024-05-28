@@ -6,13 +6,15 @@ import SearchIcon from "../../components/icons/SearchIcon";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import fetch from "../../fetch";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import BookDisplay from "../../components/BookDisplay/BookDisplay";
 import Spinner from "react-bootstrap/Spinner"
 import { useSearchParams, Link } from "react-router-dom"
 import Pagination from "react-bootstrap/Pagination"
+import { ThemeContext } from "../../context/ThemeContext";
 
 export default function SearchPage() {
+    const { darkTheme } = useContext(ThemeContext)
     const { SearchInput } = fetch
 
     const validateType = (type) => {
@@ -49,7 +51,12 @@ export default function SearchPage() {
         const response = await SearchInput(type, search, page)
         setResponse(response)
         setLoading(false)
+        window.scrollTo(0, 0)
     }
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
 
     useEffect(() => {
         if (searchParams.get("search") !== null && searchParams.get("type") !== null) {
@@ -94,13 +101,22 @@ export default function SearchPage() {
         <Container fluid className="py-5">
             <Form onSubmit={handleSubmit}>
                 <Container fluid className="mb-3 radio-search">
-                    <Form.Check type="radio" label="ISBN" inline name="core_type" id="isbn" onChange={coreChange} checked={coreType === 'isbn'} />
-                    <Form.Check type="radio" label="Autor" inline name="core_type" id="author" onChange={coreChange} checked={coreType === 'author'} />
-                    <Form.Check type="radio" label="Título" inline name="core_type" id="title" checked={coreType === 'title'} onChange={coreChange} />
+                    <Form.Check
+                        type="radio" label="ISBN" inline name="core_type" id="isbn" onChange={coreChange}
+                        checked={coreType === 'isbn'} className={darkTheme ? "darkInput" : ""}
+                    />
+                    <Form.Check
+                        type="radio" label="Autor" inline name="core_type" id="author" onChange={coreChange}
+                        checked={coreType === 'author'} className={darkTheme ? "darkInput" : ""}
+                    />
+                    <Form.Check
+                        type="radio" label="Título" inline name="core_type" id="title" checked={coreType === 'title'}
+                        onChange={coreChange} className={darkTheme ? "darkInput" : ""}
+                    />
                 </Container>
                 <Row>
                     <Col md={11} sm={10} xs={9}>
-                        <Form.Control type="text" placeholder="Digite aqui" value={textInput} onChange={changeInput} />
+                        <Form.Control type="text" placeholder="Digite aqui" value={textInput} onChange={changeInput} className={darkTheme ? "darkTextInput" : ""} />
                     </Col>
                     <Col md={1} sm={2} xs={2}>
                         <Button type="submit">

@@ -18,7 +18,7 @@ export default function SinglePage() {
     const [error, setError] = useState("")
     const [book, setBook] = useState({})
     const [image, setImage] = useState("")
-    const {FetchImage} = fetch
+    const { FetchImage } = fetch
 
     const ValidateId = (id) => (
         (+id >= 1 && +id < 999999999999 && !(isNaN(id)))
@@ -36,22 +36,26 @@ export default function SinglePage() {
     }, [])
 
     useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
+
+    useEffect(() => {
         if (response["error"] !== undefined) setError(response["message"])
         if (response["book"] !== undefined) {
             setBook(response["book"])
         }
     }, [response])
 
-    useEffect(()=>{
-        if(book["Year"] !== undefined){
+    useEffect(() => {
+        if (book["Year"] !== undefined) {
             const GetImage = async () => {
                 const imgBlob = await FetchImage(book["Coverurl"]);
                 const url = URL.createObjectURL(imgBlob);
                 setImage(url)
-            }   
+            }
             GetImage()
         }
-    },[book])
+    }, [book])
 
     if (id === "invalid") return (
         <Container fluid>
@@ -64,8 +68,8 @@ export default function SinglePage() {
     return (
         <Container fluid>
             {loading ? (
-                <Container className="mt-5 text-center">
-                    <Spinner animation="border" role="status" />
+                <Container className="mt-5 text-center mb-5">
+                    <Spinner animation="border" role="status" className="mt-5 mb-5" />
                     <Space />
                 </Container>
             ) : (
@@ -77,7 +81,7 @@ export default function SinglePage() {
 
                 ) : (
                     <Container fluid className="mt-5 p-5 front">
-                        <Row>
+                        <Row style={{minHeight: "350px"}}>
                             <Col md={4} className="text-center mb-4">
                                 <img
                                     //src={`https://4064-189-121-203-44.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
@@ -115,13 +119,14 @@ export default function SinglePage() {
                                         <span className="textW">ISBN: </span>{book["Identifier"]}
                                     </Col>
                                 </Row>
-                                    <span className="textW">Tópico: </span>  {book["Topic"]}
-                                <Row className="mt-3">
-                                    <b>Descrição:</b> <span>{book["descr"] ? book["descr"] : "Nenhuma descrição encontrada"} </span>
-                                </Row>
+                                <span className="textW">Tópico: </span>  {book["Topic"]}
                             </Col>
                         </Row>
-
+                        <Row className="mt-1 text-center mb-2">
+                            <b>Descrição:</b> 
+                        </Row>    
+                        <p  style={{marginBottom: "100px", textAlign: "justify"}}>&nbsp; {book["descr"] ? book["descr"] : "Nenhuma descrição encontrada"} </p>
+                        
                     </Container>
                 ))
             )}

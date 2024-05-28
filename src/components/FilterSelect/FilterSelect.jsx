@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 import Container from "react-bootstrap/esm/Container"
 import Col from "react-bootstrap/esm/Col"
 import Row from "react-bootstrap/esm/Row"
@@ -9,8 +9,10 @@ import Spinner from "react-bootstrap/esm/Spinner"
 import Button from "react-bootstrap/esm/Button"
 import info from "../../info"
 import Drop from "../icons/Drop"
+import { ThemeContext } from "../../context/ThemeContext"
 
 export default function FilterSelect(props) {
+    const { darkTheme } = useContext(ThemeContext)
     const { topicos, linguas, subtopicos } = info
 
     const [textInput, setTextInput] = useState("")
@@ -86,11 +88,11 @@ export default function FilterSelect(props) {
                 <Row>
                     <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="numberInput">Ano:</Form.Label>
-                        <Form.Control type="number" placeholder="Digite aqui" value={textInput} onChange={changeInput} id={"numberInput"} />
+                        <Form.Control type="number" placeholder="Digite aqui" value={textInput} onChange={changeInput} id={"numberInput"} className={darkTheme ? "darkTextInput" : ""}/>
                     </Col>
                     <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="languageSelect">Língua:</Form.Label>
-                        <Form.Select aria-label="Default select example" id={"languageSelect"} className="select-filtro" value={language} onChange={changeLanguage}>
+                        <Form.Select aria-label="Default select example" id={"languageSelect"} className={darkTheme ? "darkSelect" : ""} value={language} onChange={changeLanguage}>
                             <option value={""}>Selecione a Língua</option>
                             {linguas.map(l => (
                                 <option key={l} value={l}>{l}</option>

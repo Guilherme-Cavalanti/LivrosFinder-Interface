@@ -5,7 +5,7 @@ li {
 
 }
 li:hover {
-    background-color: inherit;
+    background-color: #dadde1ad;;
 }
 ul {
     padding-top: 20px;
@@ -19,9 +19,15 @@ a {
     text-decoration: none;
     color: inherit;
 }
-.side-span {
-    padding: 3px;
+
+.darkInput input{
+    background-color: #212529
 }
-.side-span:hover {
-    background-color: #dadde1ad;
+
+.darkTextInput, .darkSelect {
+    background-color: #212529 !important;
+    color: #dee2e6 !important
+}
+.darkTextInput::placeholder {
+    color: #dee2e6 !important;
 }

@@ -27,6 +27,9 @@ export default function SearchPage() {
     const [pages, setPages] = useState("")
     const [activePage, setActivePage] = useState(null)
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     useEffect(()=>{
         if(filter.year != undefined){
             if(activePage == 0) loadData(activePage)
@@ -65,7 +68,7 @@ export default function SearchPage() {
         }
     }, [activePage])
     return (
-        <Container fluid className="py-5">
+        <Container fluid>
             <FilterSelect Apply={ApplyFilter}/>
             {loading ? (
                 <Container className="mt-5 text-center">
@@ -77,7 +80,7 @@ export default function SearchPage() {
                     (books.length > 0 ? (
                         <>
                             <BookDisplay books={books} />
-                            <Container fluid className="p-5">
+                            <Container fluid className="p-5" style={{marginBottom: "80px"}}>
                                 <Pagination size={"sm"}>
                                     {Array.from({ length: pages }, (_, n) => n).map(n => (
                                         <Pagination.Item key={n} onClick={() => ChangePage(n)} active={activePage === n}>{n + 1}</Pagination.Item>
