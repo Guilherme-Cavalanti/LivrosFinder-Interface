@@ -27,7 +27,7 @@ export default function BookDisplay(props) {
                                     src={`https://5030-179-99-70-85.ngrok-free.app/proxy?url=${book["Coverurl"]}`}
                                     //src={imageUrls[book["Coverurl"]]}
                                     width={"50%"}
-                                    style={{ minWidth: "100px" }}
+                                    // style={{ minWidth: "100px" }}
                                     alt={`Cover of ${book["Title"]}`}
                                 />
                             </Col>

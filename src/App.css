@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  overflow-x: hidden !important;
+  overflow-x: auto !important;
 }
 :root {
   --light-background-2: #F8f9fa;

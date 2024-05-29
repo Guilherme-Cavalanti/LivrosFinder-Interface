@@ -83,9 +83,9 @@ export default function FilterSelect(props) {
     };
 
     return (
-        <Container fluid>
+        <Container fluid className="">
             <Form onSubmit={handleSubmit}>
-                <Row>
+                <Row style={{marginRight: "0 px"}}>
                     <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="numberInput">Ano:</Form.Label>
                         <Form.Control type="number" placeholder="Digite aqui" value={textInput} onChange={changeInput} id={"numberInput"} className={darkTheme ? "darkTextInput" : ""}/>
@@ -104,10 +104,10 @@ export default function FilterSelect(props) {
                     <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="topicInput">Tópico:</Form.Label>
                         <Row>
-                            <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
+                            <Col xs={10} sm={11} style={{ paddingRight: "0px" }} >
                                 <Form.Control type="text" placeholder="Selecione o tópico" value={topic} id={"topicInput"} disabled={true} className={darkTheme ? "darkBox" : ""}/>
                             </Col>
-                            <Col xs={1} sm={1} className="text-start p-0">
+                            <Col xs={2} sm={1} className="text-start p-0">
                                 <Drop func={topicDrop} />
                             </Col>
                         </Row>
@@ -125,10 +125,10 @@ export default function FilterSelect(props) {
                     <Col sm={6} xs={12} className="mt-3">
                         <Form.Label htmlFor="subtopicInput">Subtópico:</Form.Label>
                         <Row>
-                            <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
+                            <Col xs={10} sm={11} style={{ paddingRight: "0px" }} >
                                 <Form.Control type="text" placeholder="Selecione o subtópico" value={subTopic} id={"subtopicInput"} disabled={true}  className={darkTheme ? "darkBox" : ""}/>
                             </Col>
-                            <Col xs={1} sm={1} className="text-start p-0">
+                            <Col xs={2} sm={1} className="text-start p-0">
                                 <Drop func={subTopicDrop} />
                             </Col>
                         </Row>
