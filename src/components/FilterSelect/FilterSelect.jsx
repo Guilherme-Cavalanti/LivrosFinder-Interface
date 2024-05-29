@@ -105,7 +105,7 @@ export default function FilterSelect(props) {
                         <Form.Label htmlFor="topicInput">Tópico:</Form.Label>
                         <Row>
                             <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
-                                <Form.Control type="text" placeholder="Selecione o tópico" value={topic} id={"topicInput"} disabled={true} />
+                                <Form.Control type="text" placeholder="Selecione o tópico" value={topic} id={"topicInput"} disabled={true} className={darkTheme ? "darkBox" : ""}/>
                             </Col>
                             <Col xs={1} sm={1} className="text-start p-0">
                                 <Drop func={topicDrop} />
@@ -126,7 +126,7 @@ export default function FilterSelect(props) {
                         <Form.Label htmlFor="subtopicInput">Subtópico:</Form.Label>
                         <Row>
                             <Col xs={11} sm={11} style={{ paddingRight: "0px" }} >
-                                <Form.Control type="text" placeholder="Selecione o subtópico" value={subTopic} id={"subtopicInput"} disabled={true} />
+                                <Form.Control type="text" placeholder="Selecione o subtópico" value={subTopic} id={"subtopicInput"} disabled={true}  className={darkTheme ? "darkBox" : ""}/>
                             </Col>
                             <Col xs={1} sm={1} className="text-start p-0">
                                 <Drop func={subTopicDrop} />
