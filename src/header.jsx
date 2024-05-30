@@ -28,22 +28,22 @@ export default function Header() {
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <ul className="ul-header">
-                                <Link to='about'>
+                                <Link to='about' onClick={handleClose}>
                                     <li className="rounded">
                                         Sobre
                                     </ li>
                                 </Link>
-                                <Link to='browse/search'>
+                                <Link to='browse/search' onClick={handleClose}>
                                     <li className="rounded">
                                         Pesquisar livros
                                     </ li>
                                 </Link>
-                                <Link to='browse/filter'>
+                                <Link to='browse/filter' onClick={handleClose}>
                                     <li className="rounded">
                                         Filtros
                                     </ li>
                                 </Link>
-                                <a href="https://github.com/EdgarLiraa/book_api" target="blank">
+                                <a href="https://github.com/EdgarLiraa/book_api" target="blank" onClick={handleClose}>
                                     <li className="rounded">
                                         Github <BoxArrow size={14} />
                                     </li>
