@@ -24,7 +24,7 @@ export default function Header() {
                     </button>
                     <Offcanvas show={show} onHide={handleClose} style={{ backgroundColor: "#1f2328", color: "#FFFFFF" }} responsive="lg">
                         <Offcanvas.Header closeButton style={{ paddingTop: "5px" }} className="border-bottom" closeVariant="white">
-                            <Offcanvas.Title> <Link to='/'>Task Manager </Link>        <ThemeButton /> </Offcanvas.Title>
+                            <Offcanvas.Title> <Link to='/' onClick={handleClose}>Task Manager </Link> <span onClick={handleClose}><ThemeButton/> </span> </Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <ul className="ul-header">

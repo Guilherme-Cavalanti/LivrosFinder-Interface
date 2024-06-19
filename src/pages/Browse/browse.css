@@ -31,3 +31,12 @@ a {
 .darkTextInput::placeholder {
     color: #dee2e6 !important;
 }
+
+.mainPart {
+    border-left: 1px solid #dee2e6
+}
+@media (min-width: 0px) and (max-width: 992px) {
+    .mainPart {
+        border: none!important;
+    }
+}
